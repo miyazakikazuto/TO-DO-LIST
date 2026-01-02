@@ -17,25 +17,37 @@ document.addEventListener('DOMContentLoaded', () => {
     function addTask() {
         const taskText = taskInput.value.trim();
         const priority = document.getElementById('priority-select').value;
+        const dueDate = document.getElementById('due-date-input').value;
         if (taskText === '') return;
 
         const task = {
             id: Date.now(),
             text: taskText,
             completed: false,
-            priority: priority
+            priority: priority,
+            dueDate: dueDate || null
         };
 
         displayTask(task);
         saveTask(task);
 
         taskInput.value = '';
+        document.getElementById('due-date-input').value = '';
     }
 
     function displayTask(task) {
         const li = document.createElement('li');
         li.className = task.completed ? 'completed' : '';
         li.classList.add(`priority-${task.priority}`);
+        
+        // Check if overdue
+        if (task.dueDate && !task.completed) {
+            const today = new Date().toISOString().split('T')[0];
+            if (task.dueDate < today) {
+                li.classList.add('overdue');
+            }
+        }
+        
         li.dataset.id = task.id;
 
         const checkbox = document.createElement('input');
@@ -52,6 +64,13 @@ document.addEventListener('DOMContentLoaded', () => {
         priorityBadge.className = 'priority-badge';
         priorityBadge.textContent = task.priority.charAt(0).toUpperCase() + task.priority.slice(1);
 
+        const dueDateSpan = document.createElement('span');
+        dueDateSpan.className = 'due-date';
+        if (task.dueDate) {
+            const date = new Date(task.dueDate);
+            dueDateSpan.textContent = date.toLocaleDateString();
+        }
+
         const deleteBtn = document.createElement('button');
         deleteBtn.className = 'delete-btn';
         deleteBtn.textContent = 'Delete';
@@ -60,6 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
         li.appendChild(checkbox);
         li.appendChild(taskText);
         li.appendChild(priorityBadge);
+        li.appendChild(dueDateSpan);
         li.appendChild(deleteBtn);
 
         taskList.appendChild(li);

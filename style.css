@@ -41,6 +41,13 @@ h1 {
     border-right: none;
 }
 
+#due-date-input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-left: none;
+    border-right: none;
+}
+
 #add-btn {
     padding: 10px;
     background-color: #28a745;
@@ -69,6 +76,11 @@ li {
 li.completed {
     text-decoration: line-through;
     color: #888;
+}
+
+li.overdue {
+    background-color: #ffe6e6;
+    border-color: #ff6b6b;
 }
 
 li.priority-high {
@@ -112,6 +124,18 @@ li.priority-low {
 .priority-low .priority-badge {
     background-color: #28a745;
     color: white;
+}
+
+.due-date {
+    margin-right: 10px;
+    font-size: 0.9em;
+    color: #666;
+    font-style: italic;
+}
+
+.overdue .due-date {
+    color: #dc3545;
+    font-weight: bold;
 }
 
 .delete-btn {
