@@ -333,7 +333,7 @@ li:hover {
 
 .ios-device #add-btn {
     padding: 12px 24px;
-    background: linear-gradient(135deg, #FF6B6B 0%, #FF8E53 100%);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
     border: none;
     border-radius: 10px;
@@ -342,12 +342,12 @@ li:hover {
     cursor: pointer;
     transition: all 0.2s ease;
     min-height: 44px;
-    box-shadow: 0 2px 8px rgba(255, 107, 107, 0.3);
+    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
 }
 
 .ios-device #add-btn:hover {
     transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(255, 107, 107, 0.4);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
 }
 
 .ios-device li {
@@ -529,7 +529,7 @@ li:hover {
 
 .android-device #add-btn {
     padding: 14px 28px;
-    background: linear-gradient(135deg, #FF6B6B 0%, #FF8E53 100%);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
     border: none;
     border-radius: 8px;
@@ -538,14 +538,14 @@ li:hover {
     cursor: pointer;
     transition: all 0.2s ease;
     min-height: 48px;
-    box-shadow: 0 1px 3px rgba(255, 107, 107, 0.3);
+    box-shadow: 0 1px 3px rgba(102, 126, 234, 0.3);
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
 
 .android-device #add-btn:hover {
-    background: linear-gradient(135deg, #FF5252 0%, #FF7043 100%);
-    box-shadow: 0 2px 8px rgba(255, 107, 107, 0.4);
+    background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%);
+    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.4);
     transform: translateY(-1px);
 }
 
