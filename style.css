@@ -256,3 +256,398 @@ li:hover {
         font-size: 13px;
     }
 }
+
+/* iOS Specific Styling */
+.ios-device {
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', sans-serif;
+}
+
+.ios-device .container {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    backdrop-filter: blur(20px);
+    margin: 0 auto;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.ios-device h1 {
+    text-align: center;
+    color: #1d1d1f;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.ios-device .input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.ios-device #task-input {
+    flex: 1;
+    padding: 14px 16px;
+    border: 1px solid #d1d1d6;
+    border-radius: 12px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #f9f9f9;
+    transition: border-color 0.2s ease;
+}
+
+.ios-device #task-input:focus {
+    outline: none;
+    border-color: #007aff;
+    background-color: white;
+}
+
+.ios-device .input-row {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.ios-device #priority-select,
+.ios-device #due-date-input {
+    padding: 12px 16px;
+    border: 1px solid #d1d1d6;
+    border-radius: 10px;
+    font-size: 16px;
+    flex: 1;
+    background-color: #f9f9f9;
+    transition: border-color 0.2s ease;
+}
+
+.ios-device #priority-select:focus,
+.ios-device #due-date-input:focus {
+    outline: none;
+    border-color: #007aff;
+    background-color: white;
+}
+
+.ios-device #add-btn {
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #007aff 0%, #5856d6 100%);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    min-height: 44px;
+    box-shadow: 0 2px 8px rgba(0, 122, 255, 0.3);
+}
+
+.ios-device #add-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 122, 255, 0.4);
+}
+
+.ios-device li {
+    display: flex;
+    align-items: center;
+    padding: 16px;
+    border-bottom: 1px solid #e5e5e7;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 12px;
+    margin-bottom: 8px;
+    backdrop-filter: blur(10px);
+    transition: all 0.2s ease;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.ios-device li:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.ios-device .checkbox {
+    width: 20px;
+    height: 20px;
+    margin-right: 12px;
+    accent-color: #007aff;
+    border-radius: 4px;
+}
+
+.ios-device .task-text {
+    flex: 1;
+    font-size: 16px;
+    line-height: 1.4;
+    color: #1d1d1f;
+}
+
+.ios-device .priority-badge {
+    margin-right: 12px;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.ios-device .priority-easy .priority-badge {
+    background-color: #34c759;
+    color: white;
+}
+
+.ios-device .priority-hard .priority-badge {
+    background-color: #ff3b30;
+    color: white;
+}
+
+.ios-device .due-date {
+    margin-right: 12px;
+    font-size: 14px;
+    color: #8e8e93;
+    font-weight: 500;
+}
+
+.ios-device .overdue .due-date {
+    color: #ff3b30;
+    font-weight: bold;
+}
+
+.ios-device .edit-btn,
+.ios-device .delete-btn {
+    padding: 8px 14px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    min-width: 60px;
+    min-height: 36px;
+}
+
+.ios-device .edit-btn {
+    background-color: #007aff;
+    color: white;
+    margin-right: 8px;
+}
+
+.ios-device .edit-btn:hover {
+    background-color: #0056cc;
+}
+
+.ios-device .delete-btn {
+    background-color: #ff3b30;
+    color: white;
+}
+
+.ios-device .delete-btn:hover {
+    background-color: #d63027;
+}
+
+/* Android Specific Styling */
+.android-device {
+    font-family: 'Roboto', 'Inter', sans-serif;
+}
+
+.android-device .container {
+    background-color: rgba(255, 255, 255, 0.98);
+    padding: 24px;
+    border-radius: 8px;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    max-width: 500px;
+    backdrop-filter: blur(8px);
+    margin: 0 auto;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.android-device h1 {
+    text-align: center;
+    color: #202124;
+    font-size: 1.6rem;
+    margin-bottom: 24px;
+    font-weight: 500;
+    letter-spacing: 0.25px;
+}
+
+.android-device .input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.android-device #task-input {
+    flex: 1;
+    padding: 16px 20px;
+    border: 2px solid #e8eaed;
+    border-radius: 8px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #f8f9fa;
+    transition: all 0.2s ease;
+    font-weight: 400;
+}
+
+.android-device #task-input:focus {
+    outline: none;
+    border-color: #1a73e8;
+    background-color: white;
+    box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.1);
+}
+
+.android-device .input-row {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.android-device #priority-select,
+.android-device #due-date-input {
+    padding: 14px 20px;
+    border: 2px solid #e8eaed;
+    border-radius: 8px;
+    font-size: 16px;
+    flex: 1;
+    background-color: #f8f9fa;
+    transition: all 0.2s ease;
+    font-weight: 400;
+}
+
+.android-device #priority-select:focus,
+.android-device #due-date-input:focus {
+    outline: none;
+    border-color: #1a73e8;
+    background-color: white;
+    box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.1);
+}
+
+.android-device #add-btn {
+    padding: 14px 28px;
+    background: linear-gradient(135deg, #1a73e8 0%, #1557b0 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    min-height: 48px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.android-device #add-btn:hover {
+    background: linear-gradient(135deg, #1557b0 0%, #0d47a1 100%);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    transform: translateY(-1px);
+}
+
+.android-device li {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #e8eaed;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    margin-bottom: 12px;
+    backdrop-filter: blur(4px);
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.android-device li:hover {
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+    transform: translateY(-1px);
+}
+
+.android-device .checkbox {
+    width: 24px;
+    height: 24px;
+    margin-right: 16px;
+    accent-color: #1a73e8;
+    border-radius: 2px;
+}
+
+.android-device .task-text {
+    flex: 1;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #202124;
+    font-weight: 400;
+}
+
+.android-device .priority-badge {
+    margin-right: 16px;
+    padding: 6px 12px;
+    border-radius: 16px;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.android-device .priority-easy .priority-badge {
+    background-color: #34a853;
+    color: white;
+}
+
+.android-device .priority-hard .priority-badge {
+    background-color: #ea4335;
+    color: white;
+}
+
+.android-device .due-date {
+    margin-right: 16px;
+    font-size: 14px;
+    color: #5f6368;
+    font-weight: 500;
+}
+
+.android-device .overdue .due-date {
+    color: #ea4335;
+    font-weight: bold;
+}
+
+.android-device .edit-btn,
+.android-device .delete-btn {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    min-width: 64px;
+    min-height: 40px;
+    text-transform: uppercase;
+    letter-spacing: 0.25px;
+}
+
+.android-device .edit-btn {
+    background-color: #1a73e8;
+    color: white;
+    margin-right: 8px;
+}
+
+.android-device .edit-btn:hover {
+    background-color: #1557b0;
+    box-shadow: 0 2px 4px rgba(26, 115, 232, 0.3);
+}
+
+.android-device .delete-btn {
+    background-color: #ea4335;
+    color: white;
+}
+
+.android-device .delete-btn:hover {
+    background-color: #d33b2c;
+    box-shadow: 0 2px 4px rgba(234, 67, 53, 0.3);
+}

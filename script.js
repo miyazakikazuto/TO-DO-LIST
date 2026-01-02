@@ -1,4 +1,14 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Device detection
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+    const isAndroid = /Android/.test(navigator.userAgent);
+    
+    if (isIOS) {
+        document.body.classList.add('ios-device');
+    } else if (isAndroid) {
+        document.body.classList.add('android-device');
+    }
+
     const taskInput = document.getElementById('task-input');
     const addBtn = document.getElementById('add-btn');
     const taskList = document.getElementById('task-list');

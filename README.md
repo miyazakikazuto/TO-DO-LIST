@@ -24,6 +24,7 @@ A beautiful, modern To-Do List web application with glassmorphism design, built 
 - 🔤 **Modern Typography**: Clean Inter font from Google Fonts
 - 📱 **Responsive**: Works on desktop and mobile devices
 - ⚡ **Smooth Animations**: Hover effects and transitions
+- 📱 **Device-Specific UI**: Optimized design for iOS and Android browsers
 
 ### Smart Features
 - 🟢 **Easy Tasks**: Green badges and borders
