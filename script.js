@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Load tasks from localStorage
     refreshTaskList();
+    updateTaskSummary();
 
     // Add task event
     addBtn.addEventListener('click', addTask);
@@ -44,6 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         displayTask(task);
         saveTask(task);
+        updateTaskSummary();
 
         taskInput.value = '';
         // Keep today's date as default instead of clearing
@@ -114,6 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
             saveTasks(tasks);
             const li = document.querySelector(`li[data-id="${id}"]`);
             li.classList.toggle('completed');
+            updateTaskSummary();
         }
     }
 
@@ -127,6 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
             task.text = newText.trim();
             saveTasks(tasks);
             refreshTaskList();
+            updateTaskSummary();
         }
     }
 
@@ -137,6 +141,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (li) {
             taskList.removeChild(li);
         }
+        updateTaskSummary();
     }
 
     function saveTask(task) {
@@ -149,5 +154,27 @@ document.addEventListener('DOMContentLoaded', () => {
         taskList.innerHTML = '';
         const tasks = loadTasks();
         tasks.forEach(displayTask);
+    }
+
+    function updateTaskSummary() {
+        const tasks = loadTasks();
+        
+        let total = tasks.length;
+        let done = tasks.filter(task => task.completed).length;
+        let pending = total - done;
+        let overdue = 0;
+        
+        const today = new Date().toISOString().split('T')[0];
+        tasks.forEach(task => {
+            if (!task.completed && task.dueDate && task.dueDate < today) {
+                overdue++;
+            }
+        });
+        
+        // Update the display
+        document.getElementById('total-count').textContent = total;
+        document.getElementById('done-count').textContent = done;
+        document.getElementById('pending-count').textContent = pending;
+        document.getElementById('overdue-count').textContent = overdue;
     }
 });

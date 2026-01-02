@@ -6,7 +6,7 @@ A beautiful, modern To-Do List web application with glassmorphism design, built 
 
 **🚀 [Try it Live!](https://studious-sniffle-4wrrg6r7979h759x-8000.app.github.dev/)**
 
-**📂 [GitHub Repository](https://github.com/miyazakikazuto/TO-DO-LIST)**
+**📂 [GitHub Repository](https://github.com/miyazakikazuto/task-list)**
 
 ## ✨ Features
 
@@ -40,8 +40,8 @@ Simply click the **"Try it Live!"** link above to use the app instantly.
 ### Option 2: Local Development
 1. Clone the repository:
    ```bash
-   git clone https://github.com/miyazakikazuto/TO-DO-LIST.git
-   cd TO-DO-LIST
+   git clone https://github.com/miyazakikazuto/task-list.git
+   cd task-list
    ```
 
 2. Open `index.html` in your browser, or start a local server:
@@ -71,7 +71,7 @@ Simply click the **"Try it Live!"** link above to use the app instantly.
 ## 📁 Project Structure
 
 ```
-TO-DO-LIST/
+task-list/
 ├── index.html          # Main HTML structure
 ├── style.css           # Modern CSS with glassmorphism
 ├── script.js           # Core JavaScript functionality
