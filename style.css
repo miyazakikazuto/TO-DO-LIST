@@ -18,7 +18,7 @@ body {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
+    width: 500px;
     backdrop-filter: blur(10px);
 }
 
@@ -33,7 +33,7 @@ h1 {
 }
 
 #task-input {
-    flex: 1;
+    flex: 2;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px 0 0 4px;
@@ -44,6 +44,7 @@ h1 {
     border: 1px solid #ccc;
     border-left: none;
     border-right: none;
+    flex: 1;
 }
 
 #due-date-input {
@@ -51,6 +52,7 @@ h1 {
     border: 1px solid #ccc;
     border-left: none;
     border-right: none;
+    flex: 1;
 }
 
 #add-btn {
