@@ -3,6 +3,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const addBtn = document.getElementById('add-btn');
     const taskList = document.getElementById('task-list');
 
+    // Set default due date to today
+    const today = new Date().toISOString().split('T')[0];
+    document.getElementById('due-date-input').value = today;
+
     // Load tasks from localStorage
     refreshTaskList();
 
@@ -32,7 +36,8 @@ document.addEventListener('DOMContentLoaded', () => {
         saveTask(task);
 
         taskInput.value = '';
-        document.getElementById('due-date-input').value = '';
+        // Keep today's date as default instead of clearing
+        document.getElementById('due-date-input').value = today;
     }
 
     function displayTask(task) {
