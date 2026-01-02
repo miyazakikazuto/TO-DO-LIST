@@ -6,66 +6,89 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
+    background-attachment: scroll; /* Better for mobile */
+    padding: 10px;
+    box-sizing: border-box;
 }
 
 .container {
     background-color: rgba(255, 255, 255, 0.95);
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 500px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    max-width: 500px;
     backdrop-filter: blur(10px);
+    margin: 0 auto;
 }
 
 h1 {
     text-align: center;
     color: #333;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
 }
 
 .input-container {
     display: flex;
+    flex-direction: column;
+    gap: 10px;
     margin-bottom: 20px;
 }
 
 #task-input {
-    flex: 2;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px 0 0 4px;
+    flex: 1;
+    padding: 12px 16px;
+    border: 2px solid #e1e5e9;
+    border-radius: 8px;
+    font-size: 16px; /* Prevents zoom on iOS */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.input-row {
+    display: flex;
+    gap: 10px;
+    align-items: center;
 }
 
 #priority-select {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-left: none;
-    border-right: none;
+    padding: 12px 16px;
+    border: 2px solid #e1e5e9;
+    border-radius: 8px;
+    font-size: 16px;
     flex: 1;
+    background-color: white;
 }
 
 #due-date-input {
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-left: none;
-    border-right: none;
+    padding: 10px 16px;
+    border: 2px solid #e1e5e9;
+    border-radius: 8px;
+    font-size: 16px;
     flex: 1;
 }
 
 #add-btn {
-    padding: 10px;
-    background-color: #28a745;
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
     border: none;
-    border-radius: 0 4px 4px 0;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
     cursor: pointer;
+    transition: all 0.2s ease;
+    min-height: 44px; /* iOS touch target minimum */
 }
 
 #add-btn:hover {
-    background-color: #218838;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
 }
 
 ul {
@@ -76,93 +99,160 @@ ul {
 li {
     display: flex;
     align-items: center;
-    padding: 10px;
-    border-bottom: 1px solid #eee;
+    padding: 16px;
+    border-bottom: 1px solid #e1e5e9;
     background-color: rgba(255, 255, 255, 0.8);
-    border-radius: 4px;
-    margin-bottom: 5px;
+    border-radius: 8px;
+    margin-bottom: 8px;
     backdrop-filter: blur(5px);
+    transition: all 0.2s ease;
 }
 
-li.completed {
-    text-decoration: line-through;
-    color: #888;
-}
-
-li.overdue {
-    background-color: #ffe6e6;
-    border-color: #ff6b6b;
-}
-
-li.priority-easy {
-    border-left: 5px solid #28a745;
-}
-
-li.priority-hard {
-    border-left: 5px solid #dc3545;
+li:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+    transform: translateY(-1px);
 }
 
 .checkbox {
-    margin-right: 10px;
+    width: 20px;
+    height: 20px;
+    margin-right: 12px;
+    accent-color: #667eea;
 }
 
 .task-text {
     flex: 1;
+    font-size: 16px;
+    line-height: 1.4;
 }
 
 .priority-badge {
-    margin-right: 10px;
-    padding: 2px 6px;
-    border-radius: 3px;
-    font-size: 0.8em;
-    font-weight: bold;
+    margin-right: 12px;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
 }
 
 .priority-easy .priority-badge {
-    background-color: #28a745;
+    background-color: #10b981;
     color: white;
 }
 
 .priority-hard .priority-badge {
-    background-color: #dc3545;
+    background-color: #ef4444;
     color: white;
 }
 
 .due-date {
-    margin-right: 10px;
-    font-size: 0.9em;
-    color: #666;
-    font-style: italic;
+    margin-right: 12px;
+    font-size: 14px;
+    color: #6b7280;
+    font-weight: 500;
 }
 
 .overdue .due-date {
-    color: #dc3545;
+    color: #ef4444;
     font-weight: bold;
 }
 
-.delete-btn {
-    background-color: #dc3545;
-    color: white;
+.edit-btn, .delete-btn {
+    padding: 8px 12px;
     border: none;
-    padding: 5px 10px;
-    border-radius: 4px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
     cursor: pointer;
-}
-
-.delete-btn:hover {
-    background-color: #c82333;
+    transition: all 0.2s ease;
+    min-width: 60px;
+    min-height: 36px;
 }
 
 .edit-btn {
-    background-color: #17a2b8;
+    background-color: #3b82f6;
     color: white;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-right: 5px;
+    margin-right: 8px;
 }
 
 .edit-btn:hover {
-    background-color: #138496;
+    background-color: #2563eb;
+}
+
+.delete-btn {
+    background-color: #ef4444;
+    color: white;
+}
+
+.delete-btn:hover {
+    background-color: #dc2626;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    body {
+        padding: 5px;
+    }
+
+    .container {
+        padding: 16px;
+        margin: 0;
+        border-radius: 8px;
+    }
+
+    h1 {
+        font-size: 1.3rem;
+        margin-bottom: 16px;
+    }
+
+    .input-row {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    #priority-select, #due-date-input {
+        width: 100%;
+    }
+
+    li {
+        padding: 12px;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .task-text {
+        font-size: 15px;
+        min-width: 120px;
+    }
+
+    .edit-btn, .delete-btn {
+        padding: 6px 10px;
+        font-size: 13px;
+        min-width: 50px;
+        min-height: 32px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 12px;
+    }
+
+    h1 {
+        font-size: 1.2rem;
+    }
+
+    li {
+        padding: 10px;
+        margin-bottom: 6px;
+    }
+
+    .priority-badge {
+        font-size: 11px;
+        padding: 3px 6px;
+    }
+
+    .due-date {
+        font-size: 13px;
+    }
 }
