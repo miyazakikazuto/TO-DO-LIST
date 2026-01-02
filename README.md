@@ -1,4 +1,4 @@
-# To-Do List with Local Storage
+# Local To-Do List
 
 A simple To-Do List web application that saves tasks to the browser's local storage.
 
