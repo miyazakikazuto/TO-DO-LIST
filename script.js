@@ -115,6 +115,15 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    function deleteTask(id) {
+        const tasks = loadTasks().filter(t => t.id !== id);
+        saveTasks(tasks);
+        const li = document.querySelector(`li[data-id="${id}"]`);
+        if (li) {
+            taskList.removeChild(li);
+        }
+    }
+
     function saveTask(task) {
         const tasks = loadTasks();
         tasks.push(task);
