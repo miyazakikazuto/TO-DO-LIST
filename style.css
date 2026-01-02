@@ -34,6 +34,13 @@ h1 {
     border-radius: 4px 0 0 4px;
 }
 
+#priority-select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-left: none;
+    border-right: none;
+}
+
 #add-btn {
     padding: 10px;
     background-color: #28a745;
@@ -64,12 +71,47 @@ li.completed {
     color: #888;
 }
 
+li.priority-high {
+    border-left: 5px solid #dc3545;
+}
+
+li.priority-medium {
+    border-left: 5px solid #ffc107;
+}
+
+li.priority-low {
+    border-left: 5px solid #28a745;
+}
+
 .checkbox {
     margin-right: 10px;
 }
 
 .task-text {
     flex: 1;
+}
+
+.priority-badge {
+    margin-right: 10px;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 0.8em;
+    font-weight: bold;
+}
+
+.priority-high .priority-badge {
+    background-color: #dc3545;
+    color: white;
+}
+
+.priority-medium .priority-badge {
+    background-color: #ffc107;
+    color: black;
+}
+
+.priority-low .priority-badge {
+    background-color: #28a745;
+    color: white;
 }
 
 .delete-btn {

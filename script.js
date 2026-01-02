@@ -16,12 +16,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function addTask() {
         const taskText = taskInput.value.trim();
+        const priority = document.getElementById('priority-select').value;
         if (taskText === '') return;
 
         const task = {
             id: Date.now(),
             text: taskText,
-            completed: false
+            completed: false,
+            priority: priority
         };
 
         displayTask(task);
@@ -33,6 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function displayTask(task) {
         const li = document.createElement('li');
         li.className = task.completed ? 'completed' : '';
+        li.classList.add(`priority-${task.priority}`);
         li.dataset.id = task.id;
 
         const checkbox = document.createElement('input');
@@ -45,6 +48,10 @@ document.addEventListener('DOMContentLoaded', () => {
         taskText.className = 'task-text';
         taskText.textContent = task.text;
 
+        const priorityBadge = document.createElement('span');
+        priorityBadge.className = 'priority-badge';
+        priorityBadge.textContent = task.priority.charAt(0).toUpperCase() + task.priority.slice(1);
+
         const deleteBtn = document.createElement('button');
         deleteBtn.className = 'delete-btn';
         deleteBtn.textContent = 'Delete';
@@ -52,6 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         li.appendChild(checkbox);
         li.appendChild(taskText);
+        li.appendChild(priorityBadge);
         li.appendChild(deleteBtn);
 
         taskList.appendChild(li);
