@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const taskList = document.getElementById('task-list');
 
     // Load tasks from localStorage
-    loadTasksFromStorage();
+    refreshTaskList();
 
     // Add task event
     addBtn.addEventListener('click', addTask);
@@ -71,6 +71,11 @@ document.addEventListener('DOMContentLoaded', () => {
             dueDateSpan.textContent = date.toLocaleDateString();
         }
 
+        const editBtn = document.createElement('button');
+        editBtn.className = 'edit-btn';
+        editBtn.textContent = 'Edit';
+        editBtn.addEventListener('click', () => editTask(task.id));
+
         const deleteBtn = document.createElement('button');
         deleteBtn.className = 'delete-btn';
         deleteBtn.textContent = 'Delete';
@@ -80,6 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
         li.appendChild(taskText);
         li.appendChild(priorityBadge);
         li.appendChild(dueDateSpan);
+        li.appendChild(editBtn);
         li.appendChild(deleteBtn);
 
         taskList.appendChild(li);
@@ -96,11 +102,17 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    function deleteTask(id) {
-        const tasks = loadTasks().filter(t => t.id !== id);
-        saveTasks(tasks);
-        const li = document.querySelector(`li[data-id="${id}"]`);
-        taskList.removeChild(li);
+    function editTask(id) {
+        const tasks = loadTasks();
+        const task = tasks.find(t => t.id === id);
+        if (!task) return;
+
+        const newText = prompt('Edit task:', task.text);
+        if (newText !== null && newText.trim() !== '') {
+            task.text = newText.trim();
+            saveTasks(tasks);
+            refreshTaskList();
+        }
     }
 
     function saveTask(task) {
@@ -109,7 +121,8 @@ document.addEventListener('DOMContentLoaded', () => {
         saveTasks(tasks);
     }
 
-    function loadTasksFromStorage() {
+    function refreshTaskList() {
+        taskList.innerHTML = '';
         const tasks = loadTasks();
         tasks.forEach(displayTask);
     }

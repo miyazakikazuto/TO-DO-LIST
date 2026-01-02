@@ -150,3 +150,17 @@ li.priority-low {
 .delete-btn:hover {
     background-color: #c82333;
 }
+
+.edit-btn {
+    background-color: #17a2b8;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.edit-btn:hover {
+    background-color: #138496;
+}
