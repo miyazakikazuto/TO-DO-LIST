@@ -1,4 +1,4 @@
-# Local To-Do List
+# To-Do List
 
 A beautiful, modern To-Do List web application with glassmorphism design, built with HTML, CSS, and JavaScript.
 
