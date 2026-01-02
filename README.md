@@ -4,7 +4,7 @@ A simple To-Do List web application that saves tasks to the browser's local stor
 
 ## Features
 
-- Add new tasks with priority levels (High, Medium, Low)
+- Add new tasks with priority levels (Easy/Hard)
 - Set due dates for tasks with visual overdue indicators
 - Edit task text after creation
 - Mark tasks as completed

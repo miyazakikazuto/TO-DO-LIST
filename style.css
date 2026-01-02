@@ -92,16 +92,12 @@ li.overdue {
     border-color: #ff6b6b;
 }
 
-li.priority-high {
-    border-left: 5px solid #dc3545;
-}
-
-li.priority-medium {
-    border-left: 5px solid #ffc107;
-}
-
-li.priority-low {
+li.priority-easy {
     border-left: 5px solid #28a745;
+}
+
+li.priority-hard {
+    border-left: 5px solid #dc3545;
 }
 
 .checkbox {
@@ -120,18 +116,13 @@ li.priority-low {
     font-weight: bold;
 }
 
-.priority-high .priority-badge {
-    background-color: #dc3545;
+.priority-easy .priority-badge {
+    background-color: #28a745;
     color: white;
 }
 
-.priority-medium .priority-badge {
-    background-color: #ffc107;
-    color: black;
-}
-
-.priority-low .priority-badge {
-    background-color: #28a745;
+.priority-hard .priority-badge {
+    background-color: #dc3545;
     color: white;
 }
 

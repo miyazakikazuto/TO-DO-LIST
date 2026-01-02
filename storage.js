@@ -6,5 +6,17 @@ function saveTasks(tasks) {
 
 function loadTasks() {
     const tasks = localStorage.getItem('tasks');
-    return tasks ? JSON.parse(tasks) : [];
+    if (tasks) {
+        const parsedTasks = JSON.parse(tasks);
+        // Migrate old priority system to new one
+        return parsedTasks.map(task => {
+            if (task.priority === 'low') {
+                task.priority = 'easy';
+            } else if (task.priority === 'medium' || task.priority === 'high') {
+                task.priority = 'hard';
+            }
+            return task;
+        });
+    }
+    return [];
 }
